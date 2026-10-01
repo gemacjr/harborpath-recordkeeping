@@ -1,0 +1,37 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files
+
+/dist
+/tmp
+/out-tsc
+/node_modules
+/backend/target
+.angular/cache
+.netlify
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+
+# Added before first GitHub push
+node_modules/
+.next/
+out/
+dist/
+build/
+target/
+target.nosync/
+.gradle/
+.terraform/
+*.tfstate
+*.tfstate.*
+.idea/
+*.iml
+.vscode/
+.remember/
+.superpowers/
+.worktrees/
+.playwright-mcp/
+.venv/
+graphify-out/
+Pods/

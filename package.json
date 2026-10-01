@@ -1,0 +1,39 @@
+{
+  "name": "harborpath",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve shell --port 4200",
+    "start:participant": "ng serve participant --port 4201",
+    "start:sponsor": "ng serve sponsor --port 4202",
+    "start:contributions": "ng serve contributions --port 4203",
+    "build": "ng build shell && ng build participant && ng build sponsor && ng build contributions",
+    "build:shell": "ng build shell",
+    "build:participant": "ng build participant",
+    "build:sponsor": "ng build sponsor",
+    "build:contributions": "ng build contributions"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^19.2.0",
+    "@angular/common": "^19.2.0",
+    "@angular/compiler": "^19.2.0",
+    "@angular/core": "^19.2.0",
+    "@angular/forms": "^19.2.0",
+    "@angular/platform-browser": "^19.2.0",
+    "@angular/platform-browser-dynamic": "^19.2.0",
+    "@angular/router": "^19.2.0",
+    "@softarc/native-federation-node": "^2.0.10",
+    "es-module-shims": "^1.5.12",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-architects/native-federation": "^19.0.23",
+    "@angular-devkit/build-angular": "^19.2.27",
+    "@angular/cli": "^19.2.27",
+    "@angular/compiler-cli": "^19.2.0",
+    "typescript": "~5.7.2"
+  }
+}

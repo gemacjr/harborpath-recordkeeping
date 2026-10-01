@@ -1,0 +1,8 @@
+node_modules
+dist
+.angular
+tmp
+.git
+backend/target
+.remember
+*.log

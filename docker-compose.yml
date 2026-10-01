@@ -1,0 +1,59 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: harborpath
+      POSTGRES_USER: harborpath
+      POSTGRES_PASSWORD: harborpath
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U harborpath -d harborpath"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  api:
+    build: ./backend
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: harborpath
+      POSTGRES_USER: harborpath
+      POSTGRES_PASSWORD: harborpath
+      CORS_ORIGINS: http://localhost:4200
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  participant:
+    build:
+      context: .
+      dockerfile: apps/participant/Dockerfile
+
+  sponsor:
+    build:
+      context: .
+      dockerfile: apps/sponsor/Dockerfile
+
+  contributions:
+    build:
+      context: .
+      dockerfile: apps/contributions/Dockerfile
+
+  shell:
+    build:
+      context: .
+      dockerfile: apps/shell/Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      api:
+        condition: service_healthy
+      participant:
+        condition: service_started
+      sponsor:
+        condition: service_started
+      contributions:
+        condition: service_started

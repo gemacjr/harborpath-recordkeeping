@@ -1,0 +1,5 @@
+{
+  "participant": "/remotes/participant/remoteEntry.json",
+  "sponsor": "/remotes/sponsor/remoteEntry.json",
+  "contributions": "/remotes/contributions/remoteEntry.json"
+}

@@ -1,0 +1,51 @@
+:root {
+  --carbon: #141414;
+  --bond: #f4f6f1;
+  --folder: #3a5344;
+  --folder-ink: #f4f6f1;
+  --tab: #d4c4a8;
+  --ribbon: #9b1d20;
+  --grid: #c5cdc2;
+  --paper: #fbfcf8;
+  --muted: #5c675f;
+  --focus: #2f5d50;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bond);
+  color: var(--carbon);
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
